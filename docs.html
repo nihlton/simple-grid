@@ -11,9 +11,16 @@
       <h1>simple responsive<br/> flexbox grid</h1>
       <h3>documentation</h3>
       <h3><a href='index.html'>demo</a></h3>
-      
       <hr/>
       
+      <h1>index</h1>
+      <a href='#Gutters'>Gutters</a><br/>
+      <a href='#Dividers'>Dividers</a><br/>
+      <a href='#GridSystem'>Grid System</a><br/>
+      <a href='#Utilities'>Utilities</a><br/>
+      <hr/>
+      
+      <a name='Gutters'></a>
       <h1>Gutters</h1>
       <p>gutters are applied to row elements and specify how much space is placed between cells</p>
       <h3>no gutter</h3>
@@ -23,7 +30,7 @@
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
-&lt;/div>	
+&lt;/div>    
 </pre>
       </div>
       <div class='row no-gutter'>
@@ -41,7 +48,7 @@
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
-&lt;/div>	
+&lt;/div>    
 </pre>
       </div>
       <div class='row'>
@@ -58,7 +65,7 @@
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
   &lt;div>&nbsp;&lt;/div>
-&lt;/div>	
+&lt;/div>    
 </pre>
       </div>
       <div class='row large-gutter'>
@@ -68,6 +75,82 @@
       </div>
       <hr/>
       
+      <a name='Dividers'></a>
+      <h1>Dividers</h1>
+      <h3>default</h3>
+      <div class='row'>
+<pre class='small-12'>
+&lt;div class='row'>
+  &lt;hr />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr class='vertical' />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr />
+&lt;/div>
+&lt;div class='row'>
+  &lt;hr />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr class='vertical' />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr />
+&lt;/div>
+</pre>
+      </div>
+      <br/>
+      
+      <div class='row'>
+        <hr />
+        <div class='small-6'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row'>
+        <hr />
+        <div class='small-6'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6'>&nbsp;</div>
+        <hr />
+      </div>
+      <br/>
+       <h3>touching</h3>
+      <div class='row'>
+<pre class='small-12'>
+&lt;div class='row'>
+  &lt;hr />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr class='touching vertical' />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr />
+&lt;/div>
+&lt;div class='row'>
+  &lt;hr />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr class='touching vertical' />
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;hr />
+&lt;/div>
+</pre>
+      </div>
+      <br/>
+      
+      <div class='row'>
+        <hr />
+        <div class='small-6'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row'>
+        <hr />
+        <div class='small-6'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6'>&nbsp;</div>
+        <hr />
+      </div>
+      <br/>   
+      
+      <a name='GridSystem'></a>
       <h1>Grid System</h1>
       <h3>basics</h3>
       <p>
@@ -149,6 +232,45 @@
       </div>
       <hr/>
       
+      <h3>controlled grid</h3>
+      <p>
+        to specify the width of a given cell, specify the width in number of columns (out of 12) using the class name '<strong>small-x</strong>', where x is the number of columns.  
+      </p>
+      <p>
+        HINT: When you specify the column width, you don't need to close the row tag and open another. the system will wrap the cells in increments of 12.
+      </p>
+      <p>
+        <em>
+          Why '<strong>small</strong>'? - small is the default class for column widths for mobile, which can then be overridden with specified widths for tablet and desktop.  
+          We'll cover this in the next section.
+        </em>
+      </p>
+      <div class='row'>
+<pre class='small-12'>
+&lt;div class='row'>
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;div class='small-3'>&nbsp;&lt;/div>
+  &lt;div class='small-3'>&nbsp;&lt;/div>
+  &lt;div class='small-8'>&nbsp;&lt;/div>
+  &lt;div class='small-4'>&nbsp;&lt;/div>
+  &lt;div class='small-3'>&nbsp;&lt;/div>
+  &lt;div class='small-6'>&nbsp;&lt;/div>
+  &lt;div class='small-3'>&nbsp;&lt;/div>
+&lt;/div>
+</pre>
+      </div>
+      <div class='row'>
+        <div class='small-6'>&nbsp;</div>
+        <div class='small-3'>&nbsp;</div>
+        <div class='small-3'>&nbsp;</div>
+        <div class='small-8'>&nbsp;</div>
+        <div class='small-4'>&nbsp;</div>
+        <div class='small-3'>&nbsp;</div>
+        <div class='small-6'>&nbsp;</div>
+        <div class='small-3'>&nbsp;</div>      
+      </div>
+      <hr/>
+      
       <h3>responsive grid</h3>
       <p>
         this system provides three breakpoints - small, medium, and large.  roughly: mobile, tablet and desktop.  
@@ -182,6 +304,40 @@
         <div class='small-12 medium-6 large-3'>&nbsp;</div>
         <div class='small-12 medium-6 large-3'>&nbsp;</div>
         <div class='small-12 medium-6 large-3'>&nbsp;</div>
+      </div>
+      <hr/>
+      
+      <h3>offsets</h3>
+      <p>
+        to specify the left offset of a given cell, use '<strong>offset-[screen size]-x</strong>', where x is the number of columns.  
+      </p>
+      <div class='row'>
+<pre class='small-12'>
+&lt;div class='row '>
+  &lt;div class='small-3 '>offset 0&lt;/div>
+&lt;/div>
+&lt;div class='row '>
+  &lt;div class='small-3 offset-small-3'>offset 3&lt;/div>
+&lt;/div>
+&lt;div class='row' >
+  &lt;div class='small-3 offset-small-6'>offset 6&lt;/div>
+&lt;/div>
+&lt;div class='row'>
+  &lt;div class='small-3 offset-small-9'>offset 9&lt;/div>
+&lt;/div>
+</pre>
+      </div>
+      <div class='row '>
+        <div class='small-3 '>offset 0</div>
+      </div>
+      <div class='row '>
+        <div class='small-3 offset-small-3'>offset 3</div>
+      </div>
+      <div class='row' >
+        <div class='small-3 offset-small-6'>offset 6</div>
+      </div>
+      <div class='row'>
+        <div class='small-3 offset-small-9'>offset 9</div>
       </div>
       <hr/>
       
@@ -258,82 +414,8 @@
       </div>
       <hr/>
       
-      
-      <h1>dividers</h1>
-      <h3>default</h3>
-      <div class='row'>
-<pre class='small-12'>
-&lt;div class='row'>
-  &lt;hr />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr class='vertical' />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr />
-&lt;/div>
-&lt;div class='row'>
-  &lt;hr />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr class='vertical' />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr />
-&lt;/div>
-</pre>
-      </div>
-      <br/>
-      
-      <div class='row'>
-        <hr />
-        <div class='small-6'>&nbsp;</div>
-        <hr class='vertical' />
-        <div class='small-6'>&nbsp;</div>
-        <hr />
-      </div>
-      <div class='row'>
-        <hr />
-        <div class='small-6'>&nbsp;</div>
-        <hr class='vertical' />
-        <div class='small-6'>&nbsp;</div>
-        <hr />
-      </div>
-      <br/>
-       <h3>touching</h3>
-      <div class='row'>
-<pre class='small-12'>
-&lt;div class='row'>
-  &lt;hr />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr class='touching vertical' />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr />
-&lt;/div>
-&lt;div class='row'>
-  &lt;hr />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr class='touching vertical' />
-  &lt;div class='small-6'>&nbsp;&lt;/div>
-  &lt;hr />
-&lt;/div>
-</pre>
-      </div>
-      <br/>
-      
-      <div class='row'>
-        <hr />
-        <div class='small-6'>&nbsp;</div>
-        <hr class='touching vertical' />
-        <div class='small-6'>&nbsp;</div>
-        <hr />
-      </div>
-      <div class='row'>
-        <hr />
-        <div class='small-6'>&nbsp;</div>
-        <hr class='touching vertical' />
-        <div class='small-6'>&nbsp;</div>
-        <hr />
-      </div>
-      <br/>     
-      
-      <h1>utilities</h1>
+      <a name='Utilities'></a>
+      <h1>Utilities</h1>
       <h3>hide-for-x, show-for-x</h3>
       <div class='row'>
 <pre class='small-12'>
