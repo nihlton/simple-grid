@@ -95,7 +95,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
           max-width: calc( #{( $i / 12 )*100}% + calc( #{$cell-padding} * 2) );
         }
       }
-      @for $i from 1 through 12 { 
+      @for $i from 0 through 12 { 
         &> .offset-#{$sName}-#{$i} { margin-left:  calc((( #{$i} / 12 )*100%) + #{map-get($gutters, medium)} ); }
       }
     }
@@ -106,7 +106,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
           &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
           &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
           &> *, &> .row {margin: #{$gValue};}
-          &> .row:not(.no-padding) {padding: #{gValue}; }
+          &> .row:not(.no-padding) {padding: #{$gValue}; }
           .no-padding { margin: calc( -1 * (#{$gValue} + #{$cell-padding})); }
           @for $i from 1 through 12 {
             &> .#{$sName}-#{$i} {
@@ -121,7 +121,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
               max-width: calc( #{($i/12)*100}% + ( #{$cell-padding} * 2) );
             }
           }
-          @for $i from 1 through 12 { 
+          @for $i from 0 through 12 { 
             &> .offset-#{$sName}-#{$i} { margin-left:  calc((( #{$i} / 12 )*100%) + #{$gValue} ); }
           }
         }
