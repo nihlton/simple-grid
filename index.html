@@ -8,19 +8,21 @@
     <div class='container'>
     
       <div class='row'>
-        <div class='small-12 medium-6'>
+        <div class='small-12 medium-9'>
           <h1>simple responsive<br/> flexbox grid</h1>
           <h3>demo</h3>
           <h3><a href='docs.html'>documentation</a></h3>
+          <h3><a href='https://github.com/nihlton/simple-grid'>source</a></h3>
         </div>
+        <div class='small-12 medium-3'>
+          <h3>minimal syntax</h3>
+          <p>just add class name 'row' to a container, and let flex box handle it.  If you want precise control, use the familiar 12 column system.</p>
+        </div>        
         <div  class='small-6 medium-3'>
           <h3>element light</h3>
           <p>cells can be rows themselves, with cells of their own.  no unnecessary elements / nesting.</p>
         </div>
-        <div class='small-6 medium-3'>
-          <h3>minimal syntax</h3>
-          <p>just add class name 'row' to a container, and let flex box handle it.  If you want precise control, use the familiar 12 column system.</p>
-        </div>
+
         <div class='small-6 medium-3'>
           <h3>responsive</h3>
           <p>break points for mobile, tablet and desktop. Add class name 'small-n', 'medium-n' or 'large-n'.</p>
@@ -33,14 +35,7 @@
         </div>
         <div class='small-6 medium-3'>
           <h3>simple</h3>
-          <p>the guts of the grid system is just over 30 lines of SCSS.  about 360 lines compiled.</p>
-        </div>
-        <div  class='small-6 medium-3'>
-          <h3>Download</h3>
-          <p>
-            <a href='./simple-grid.css' download>CSS</a> /  
-            <a href='./simple-grid.scss' download>SCSS</a>
-          </p>
+          <p>the guts of the grid system is just over 55 lines of SCSS.  about 400 lines compiled.</p>
         </div>
       </div>
       <hr/>
@@ -50,7 +45,7 @@
         <div class='small-12 medium-6'><h3>no gutter</h3></div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
-      </div>	
+      </div>    
       <div class='row no-gutter'>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
@@ -73,36 +68,36 @@
       
       <div class='row large-gutter'>
         <div class='small-12 medium-6'><h3>large gutter</h3></div>
-		<hr class='vertical hide-for-small' />
+        <hr class='vertical hide-for-small' />
         <div class='small-6 medium-3'>&nbsp;</div>
-		<hr class='vertical show-for-small' />
+        <hr class='vertical show-for-small' />
         <div class='small-6 medium-3'>&nbsp;</div>
-		<hr />
+        <hr />
       </div>
       <div class='row large-gutter'>
         <div class='small-6 medium-3'>&nbsp;</div>
-		<hr class='vertical show-for-small' />
+        <hr class='vertical show-for-small' />
         <div class='small-6 medium-3'>&nbsp;</div>
-		<hr class='vertical hide-for-small' />
+        <hr class='vertical hide-for-small' />
         <div class='small-12 medium-6'>&nbsp;</div>
       </div>
       <hr/>
       
       <h1>Grid System</h1>
-	  	  
-	  <div class='row '>
-		<div class='small-3 offset-small-3'>offset 3</div>
-		<div class='small-3'>&nbsp;</div>
-		<div class='small-3'>&nbsp;</div>
-	  </div>
-	  <div class='row' >
-		<div class='small-3 offset-small-6'>offset 6</div>
-		<div class='small-3'>&nbsp;</div>
-	  </div>
-	  <div class='row'>
-		<div class='small-3 offset-small-9'>offset 9</div>
-	  </div>
-	  
+            
+      <div class='row '>
+        <div class='small-3 offset-small-3'>offset 3</div>
+        <div class='small-3'>&nbsp;</div>
+        <div class='small-3'>&nbsp;</div>
+      </div>
+      <div class='row' >
+        <div class='small-3 offset-small-6'>offset 6</div>
+        <div class='small-3'>&nbsp;</div>
+      </div>
+      <div class='row'>
+        <div class='small-3 offset-small-9'>offset 9</div>
+      </div>
+      
       <div class='row'>
         <div class='small-4 medium-2'>
           <span class='demo-hilite-medium demo-hilite-large '>2</span>
