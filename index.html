@@ -1,0 +1,306 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./simple-grid.css">
+    <link rel="stylesheet" href="./demo.css">
+  </head>
+  <body>
+    <div class='container'>
+    
+      <div class='row'>
+        <div class='small-12 medium-6'>
+          <h1>simple responsive<br/> flexbox grid</h1>
+          <h3>demo</h3>
+          <h3><a href='docs.html'>documentation</a></h3>
+        </div>
+        <div  class='small-6 medium-3'>
+          <h3>element light</h3>
+          <p>cells can be rows themselves, with cells of their own.  no unnecessary elements / nesting.</p>
+        </div>
+        <div class='small-6 medium-3'>
+          <h3>minimal syntax</h3>
+          <p>just add class name 'row' to a container, and let flex box handle it.  If you want precise control, use the familiar 12 column system.</p>
+        </div>
+        <div class='small-6 medium-3'>
+          <h3>responsive</h3>
+          <p>break points for mobile, tablet and desktop. Add class name 'small-n', 'medium-n' or 'large-n'.</p>
+        </div>
+        <div class='small-6 medium-3'>
+          <h3>equal column heights</h3>
+          <p>
+            no javascript hackery, just good clean fun.
+          </p>
+        </div>
+        <div class='small-6 medium-3'>
+          <h3>simple</h3>
+          <p>the guts of the grid system is just over 30 lines of SCSS.  about 350 lines compiled.</p>
+        </div>
+        <div  class='small-6 medium-3'>
+          <h3>Download</h3>
+          <p>
+            <a href='./simple-grid.css' download>CSS</a> /  
+            <a href='./simple-grid.scss' download>SCSS</a>
+          </p>
+        </div>
+      </div>
+      <hr/>
+      
+      <h1>Gutters</h1>
+      <div class='row no-gutter'>
+        <div class='small-12 medium-6'><h3>no gutter</h3></div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+      </div>	
+      <div class='row no-gutter'>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-12 medium-6'>&nbsp;</div>
+      </div>
+      <hr/>
+      
+      <div class='row'>
+        <div class='small-12 medium-6'><h3>medium gutter</h3></div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+      </div>
+
+      <div class='row'>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-12 medium-6'>&nbsp;</div>
+      </div>
+      <hr/>
+      
+      <div class='row large-gutter'>
+        <div class='small-12 medium-6'><h3>large gutter</h3></div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+      </div>
+      <div class='row large-gutter'>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <div class='small-12 medium-6'>&nbsp;</div>
+      </div>
+      <hr/>
+      
+      <h1>Dividers</h1>
+      <div class='row'>
+        <hr />
+        <div class='small-12 medium-6'>touching</div>
+        <hr class='touching show-for-small' />
+        <hr class='touching vertical hide-for-small' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row'>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical hide-for-small' />
+        <hr class='touching show-for-small' />
+        <div class='small-12 medium-6'>&nbsp;</div>
+        <hr />
+     </div>
+
+
+      <div class='row large-gutter'>
+        <hr />
+        <div class='small-12 medium-6'>touching</div>
+        <hr class='touching show-for-small' />
+        <hr class='touching vertical hide-for-small' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row large-gutter'>
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='touching vertical hide-for-small' />
+        <hr class='touching show-for-small' />
+        <div class='small-12 medium-6'>&nbsp;</div>
+        <hr/>
+      </div>
+      <br/>
+      
+      <div class='row'>
+        <div class='small-12 medium-6'>default</div>
+        <hr class='show-for-small' />
+        <hr class='vertical hide-for-small' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row' >
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical hide-for-small' />
+        <hr class='show-for-small' />
+        <div class='small-12 medium-6'>&nbsp;</div>
+      </div>
+      <br/>
+     
+      <div class='row large-gutter'>
+        <div class='small-12 medium-6'>default</div>
+        <hr class='show-for-small' />
+        <hr class='vertical hide-for-small' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr />
+      </div>
+      <div class='row large-gutter' >
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical' />
+        <div class='small-6 medium-3'>&nbsp;</div>
+        <hr class='vertical hide-for-small' />
+        <hr class='show-for-small' />
+        <div class='small-12 medium-6'>&nbsp;</div>
+      </div>
+      <br/>
+      
+      <h1>Grid System</h1>
+      <div class='row'>
+        <div class='small-4 medium-2'>
+          <span class='demo-hilite-medium demo-hilite-large '>2</span>
+          <span class='demo-hilite-small '>4</span>
+        </div>
+        <div class='small-4 medium-2'>
+          <span class='demo-hilite-medium demo-hilite-large '>2</span>
+          <span class='demo-hilite-small '>4</span>
+        </div>
+        <div class='small-4 medium-2'>
+          <span class='demo-hilite-medium demo-hilite-large '>2</span>
+          <span class='demo-hilite-small '>4</span>
+        </div>
+        <div class='small-6 medium-3'>
+          <span class='demo-hilite-medium demo-hilite-large '>3</span>
+          <span class='demo-hilite-small '>6</span>
+        </div>
+        <div class='small-6 medium-3'>
+          <span class='demo-hilite-medium demo-hilite-large '>3</span>
+          <span class='demo-hilite-small '>6</span>
+        </div>
+      </div>
+      
+      <div class='row'> 
+        <div class='medium-1 small-2'>
+          <span class='demo-hilite-medium demo-hilite-large '>1</span>
+          <span class='demo-hilite-small '>2</span>
+        </div>
+        <div class='medium-2 small-4'>
+          <span class='demo-hilite-medium demo-hilite-large '>2</span>
+          <span class='demo-hilite-small '>4</span>
+        </div>
+        <div class='medium-3 small-6'>
+          <span class='demo-hilite-medium demo-hilite-large '>3</span>
+          <span class='demo-hilite-small '>6</span>
+        </div>
+        <div class='medium-6 small-12'>
+          <span class='demo-hilite-medium demo-hilite-large '>6</span>
+          <span class='demo-hilite-small '>12</span>
+        </div> 
+      </div>
+      
+      <div class='row'>
+        <div class='small-12 medium-6 large-3'>
+          <span class='demo-hilite-large '>3</span>
+          <span class='demo-hilite-medium '>6</span>
+          <span class='demo-hilite-small '>12</span>
+        </div>
+        <div class='small-12 medium-6 large-3'>
+          <span class='demo-hilite-large '>3</span>
+          <span class='demo-hilite-medium '>6</span> 
+          <span class='demo-hilite-small '>12</span>
+        </div>
+        <div class='small-12 medium-6 large-3'>
+          <span class='demo-hilite-large '>3</span>
+          <span class='demo-hilite-medium '>6</span>
+          <span class='demo-hilite-small '>12</span>
+        </div>
+        <div class='small-12 medium-6 large-3'>
+          <span class='demo-hilite-large '>3</span>
+          <span class='demo-hilite-medium '>6</span>
+          <span class='demo-hilite-small '>12</span>
+        </div>
+      </div>
+     
+      <div class='row no-padding '>
+        <div class='small-12 medium-9 no-padding row '>
+          <div class='small-12 no-padding row '>
+            <div class='small-8 no-padding row '>
+              <div class='small-12 row'> 
+                <div class='small-3'>&nbsp;</div>
+                <div class='small-3'>&nbsp;</div>
+                <div class='small-3'>&nbsp;</div>
+                <div class='small-3'>&nbsp;</div>
+              </div>
+              <div class='small-12 row'> 
+                <div class='small-4'>&nbsp;</div>
+                <div class='small-4'>&nbsp;</div>
+                <div class='small-4'>&nbsp;</div>
+              </div>
+            </div>
+            <div class='small-4 row'>
+              <div class='small-6 '>&nbsp;</div>
+              <div class='small-6 '>&nbsp;</div>
+            </div>
+          </div>
+          <div class='small-8 row'>
+            <div class='small-6 '>&nbsp;</div>
+            <div class='small-6 '>&nbsp;</div>
+          </div>
+          <div class='small-4 row'>
+            <div class='small-6 '>&nbsp;</div>
+            <div class='small-6 '>&nbsp;</div>
+          </div>
+        </div>
+        <div class='small-12 medium-3 row'>
+          <div class='small-6 '>&nbsp;</div>
+          <div class='small-6 '>&nbsp;</div>
+        </div>
+      </div>
+      <hr/>
+      
+      <h1>utilities</h1>
+      <div class='row'>
+        <div class='small-12'>
+          <h3>.hide-for-[breakpoint], .show-for-[breakpoint]</h3>
+        </div>
+        <div class='hide-for-small'>this is <strong>not</strong> visible on small</div>
+        <div class='hide-for-medium'>this is <strong>not</strong> visible on medium</div>
+        <div class='hide-for-large'>this is <strong>not</strong> visible on large</div>
+        <div class='show-for-small'>this is <strong>only</strong> visible on small</div>
+        <div class='show-for-medium'>this is <strong>only</strong> visible on medium</div>
+        <div class='show-for-large'>this is <strong>only</strong> visible on large</div>
+      </div>
+      
+      <div class='row'>
+        <div class='small-12'>
+          <h3>.order-[breakpoint]-[1...12]</h3>
+        </div>
+        <div class='order-large-1 order-medium-2 order-small-3'>
+          <div class='demo-bold-large'>large: first</div> 
+          <div class='demo-bold-medium'>medium: second</div> 
+          <div class='demo-bold-small'>small: third</div> 
+        </div>
+        <div class='order-large-2 order-medium-3 order-small-1'>
+          <div class='demo-bold-large'>large: second</div> 
+          <div class='demo-bold-medium'>medium: third</div> 
+          <div class='demo-bold-small'>small: first</div> 
+        </div>
+        <div class='order-large-3 order-medium-1 order-small-2'>
+          <div class='demo-bold-large'>large: third</div> 
+          <div class='demo-bold-medium'>medium: first</div> 
+          <div class='demo-bold-small'>small: second</div> 
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

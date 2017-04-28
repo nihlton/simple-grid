@@ -1,0 +1,14 @@
+{
+  "name": "simple-grid",
+  "version": "1.0.0",
+  "description": "simple responsive flexbox grid",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass --output-style compact simple-grid.scss simple-grid.css"
+  },
+  "author": "greg archer",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.5.2" 
+  }
+}
