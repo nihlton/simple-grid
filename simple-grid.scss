@@ -53,7 +53,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
   margin-right: -.5px;
 }
 
-
 @media (max-width: #{map-get($breaks, medium)}) {
   .show-for-medium { display: none }
   .show-for-large { display: none }
@@ -72,16 +71,35 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
   .hide-for-large { display: none }
 }
 
+
+.row {
+  margin: 0 calc( -1 * #{map-get($gutters, medium)});
+  &> *, &> .row {margin: #{map-get($gutters, medium)};}
+  &> .row:not(.no-padding) { padding: #{map-get($gutters, medium)}; }
+  &> hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
+  .no-padding { margin: calc( -1 * (#{map-get($gutters, medium)} + #{$cell-padding})); }
+}
+
+@each $gName, $gValue in $gutters {
+  .row.#{$gName}-gutter {
+     @if $gName != 'medium' {
+      margin: 0 calc( -1 * #{$gValue});
+      &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
+      &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
+      &> hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
+      &> *, &> .row {margin: #{$gValue};}
+      &> .row:not(.no-padding) {padding: #{$gValue}; }
+      .no-padding { margin: calc( -1 * (#{$gValue} + #{$cell-padding})); }
+    }
+  }
+}
+
+
 @each $sName, $sValue in $breaks {
   @media (min-width:  #{$sValue}) {
     html { font-size: #{map-get($textBreaks, $sName)}}
     @for $i from 1 through 12 { .order-#{$sName}-#{$i} { order: #{ $i }; }}
     .row {
-      margin: 0 calc( -1 * #{map-get($gutters, medium)});
-      
-      &> *, &> .row {margin: #{map-get($gutters, medium)};}
-      &> .row:not(.no-padding) { padding: #{map-get($gutters, medium)}; }
-      .no-padding { margin: calc( -1 * (#{map-get($gutters, medium)} + #{$cell-padding})); }
       @for $i from 1 through 12 {
         &> .#{$sName}-#{$i} {
           flex-basis: calc( #{( $i / 12 )*100}% - ( #{map-get($gutters, medium)} * 2));
@@ -102,12 +120,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
     @each $gName, $gValue in $gutters {
       .row.#{$gName}-gutter {
          @if $gName != 'medium' {
-          margin: 0 calc( -1 * #{$gValue});
-          &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
-          &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
-          &> *, &> .row {margin: #{$gValue};}
-          &> .row:not(.no-padding) {padding: #{$gValue}; }
-          .no-padding { margin: calc( -1 * (#{$gValue} + #{$cell-padding})); }
           @for $i from 1 through 12 {
             &> .#{$sName}-#{$i} {
               flex-basis: calc( #{($i/12)*100}% - ( #{$gValue} * 2));

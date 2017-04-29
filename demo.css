@@ -6,6 +6,7 @@ html {transition: font-size .5s ease; }
 
 .row > * {
   background: rgba(0,0,30,.09);
+  box-shadow: 0 0 1rem rgba(255,255,255,.35);
 }
 
 .row.no-gutter > * {
@@ -34,6 +35,7 @@ hr {
 }
 
 pre {
+  font-family: 'Roboto Mono', monospace;
   outline: 1px solid #FFA6DE;
   background: white !important;
   overflow-x: auto;
