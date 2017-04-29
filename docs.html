@@ -26,10 +26,11 @@
       <a name='Gutters'></a>
       <h1>Gutters</h1>
       <p>gutters are applied to row elements and specify how much space is placed between cells</p>
+      
       <h3>no gutter</h3>
       <div class='row'>
 <pre class='small-12'>
-&lt;div class='row no-gutter'>
+&lt;div class='row <strong>no-gutter</strong>'>
   &lt;div>&lt;/div>
   &lt;div>&lt;/div>
   &lt;div>&lt;/div>
@@ -64,7 +65,7 @@
       <h3>large gutter</h3>
       <div class='row'>
 <pre class='small-12'>
-&lt;div class='row large-gutter'>
+&lt;div class='row <strong>large-gutter</strong>'>
   &lt;div>&lt;/div>
   &lt;div>&lt;/div>
   &lt;div>&lt;/div>
@@ -83,13 +84,13 @@
       <p>dividers are rendered using the horizontal rule element (&lt;hr />).  add class '<strong>vertical</strong>' for dividers between cells.  no class for dividers between rows</p>
       
       <h3>gapped</h3>
-      <p>gapped is default.  no class required</p>
+      <p>gapped is default.  no additional class required</p>
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row'>
-  &lt;hr />
+  <strong>&lt;hr /></strong>
   &lt;div class='small-6'>&lt;/div>
-  &lt;hr class='vertical' />
+  &lt;hr class='<strong>vertical</strong>' />
   &lt;div class='small-6'>&lt;/div>
   &lt;hr />
   &lt;div class='small-6'>&lt;/div>
@@ -144,7 +145,7 @@
 &lt;div class='row'>
   &lt;hr />
   &lt;div class='small-6'>&lt;/div>
-  &lt;hr class='touching vertical' />
+  &lt;hr class='<strong>touching</strong> vertical' />
   &lt;div class='small-6'>&lt;/div>
   &lt;hr />
   &lt;div class='small-6'>&lt;/div>
@@ -198,7 +199,7 @@
       </p>
       <div class='row'>
 <pre class='small-12'>
-&lt;div class='row'>
+&lt;div class='<strong>row</strong>'>
   &lt;div>&lt;/div>
   &lt;div>&lt;/div>
 &lt;/div>
@@ -248,7 +249,7 @@
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row'>
-  &lt;div class='small-6'>&lt;/div>
+  &lt;div class='<strong>small-6</strong>'>&lt;/div>
   &lt;div class='small-3'>&lt;/div>
   &lt;div class='small-3'>&lt;/div>
   &lt;div class='small-8'>&lt;/div>
@@ -278,32 +279,32 @@
       </p>
       <div class='row'>
 <pre class='small-12'>
-  &lt;div class='row'>
-    &lt;div class='small-2 medium-1'>&lt;/div>
-    &lt;div class='small-4 medium-2'>&lt;/div>
-    &lt;div class='small-6 medium-3'>&lt;/div>
-    &lt;div class='small-6 medium-3'>&lt;/div>
-    &lt;div class='small-4 medium-2'>&lt;/div>
-    &lt;div class='small-2 medium-1'>&lt;/div>
-    &lt;div class='small-12 medium-6 large-3'>&lt;/div>
-    &lt;div class='small-12 medium-6 large-3'>&lt;/div>
-    &lt;div class='small-12 medium-6 large-3'>&lt;/div>
-    &lt;div class='small-12 medium-6 large-3'>&lt;/div>
-  &lt;/div>
+&lt;div class='row'>
+  &lt;div class='<strong>small-12 medium-6 large-3</strong>'>&lt;/div>
+  &lt;div class='small-12 medium-6 large-3'>&lt;/div>
+  &lt;div class='small-12 medium-6 large-3'>&lt;/div>
+  &lt;div class='small-12 medium-6 large-3'>&lt;/div>
+  &lt;div class='small-2 medium-1'>&lt;/div>
+  &lt;div class='small-4 medium-2'>&lt;/div>
+  &lt;div class='small-6 medium-3'>&lt;/div>
+  &lt;div class='small-6 medium-3'>&lt;/div>
+  &lt;div class='small-4 medium-2'>&lt;/div>
+  &lt;div class='small-2 medium-1'>&lt;/div>
+&lt;/div>
 </pre>
       </div>
       
       <div class='row'>
+        <div class='small-12 medium-6 large-3'>&nbsp;</div>
+        <div class='small-12 medium-6 large-3'>&nbsp;</div>
+        <div class='small-12 medium-6 large-3'>&nbsp;</div>
+        <div class='small-12 medium-6 large-3'>&nbsp;</div>
         <div class='small-2 medium-1'>&nbsp;</div>
         <div class='small-4 medium-2'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-4 medium-2'>&nbsp;</div>
         <div class='small-2 medium-1'>&nbsp;</div>
-        <div class='small-12 medium-6 large-3'>&nbsp;</div>
-        <div class='small-12 medium-6 large-3'>&nbsp;</div>
-        <div class='small-12 medium-6 large-3'>&nbsp;</div>
-        <div class='small-12 medium-6 large-3'>&nbsp;</div>
       </div>
       <hr/>
       
@@ -317,16 +318,16 @@
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row '>
-  &lt;div class='small-12 '>offset 0&lt;/div>
+  &lt;div class='small-4 <strong>offset-small-8</strong>'>offset 8&lt;/div>
   &lt;div class='small-8 offset-small-4'>offset 4&lt;/div>
-  &lt;div class='small-4 offset-small-8'>offset 8&lt;/div>
+  &lt;div class='small-12 '>offset 0&lt;/div>
 &lt;/div>
 </pre>
       </div>
       <div class='row '>
-        <div class='small-12 '>offset 0</div>
-        <div class='small-8 offset-small-4'>offset 4</div>
         <div class='small-4 offset-small-8'>offset 8</div>
+        <div class='small-8 offset-small-4'>offset 4</div>
+        <div class='small-12 '>offset 0</div>
       </div>
       <hr/>
       
@@ -337,7 +338,7 @@
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row'>
-  &lt;div class='small-12 medium-6 row'>
+  &lt;div class='small-12 medium-6 <strong>row</strong>'>
     &lt;div class='small-3'>&lt;/div>
     &lt;div class='small-3'>&lt;/div>
     &lt;div class='small-3'>&lt;/div>
@@ -384,7 +385,7 @@
 <pre class='small-12'>
 &lt;div class='row'> 
   &lt;div class='small-4 row'>spans 3 rows&lt;/div>
-  &lt;div class='small-8 row no-padding'>
+  &lt;div class='small-8 row <strong>no-padding</strong>'>
     &lt;div class='small-12'>&lt;/div>
     &lt;div class='small-12'>&lt;/div>
     &lt;div class='small-12'>&lt;/div>
@@ -409,10 +410,10 @@
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row'> 
-  &lt;div class='hide-for-small'>this is &lt;strong>not&lt;/strong> visible on small&lt;/div>
+  &lt;div class='<strong>hide-for-small</strong>'>this is &lt;strong>not&lt;/strong> visible on small&lt;/div>
   &lt;div class='hide-for-medium'>this is &lt;strong>not&lt;/strong> visible on medium&lt;/div>
   &lt;div class='hide-for-large'>this is &lt;strong>not&lt;/strong> visible on large&lt;/div>
-  &lt;div class='show-for-small'>this is &lt;strong>only&lt;/strong> visible on small&lt;/div>
+  &lt;div class='<strong>show-for-small</strong>'>this is &lt;strong>only&lt;/strong> visible on small&lt;/div>
   &lt;div class='show-for-medium'>this is &lt;strong>only&lt;/strong> visible on medium&lt;/div>
   &lt;div class='show-for-large'>this is &lt;strong>only&lt;/strong> visible on large&lt;/div>
 &lt;/div>
@@ -435,7 +436,7 @@
       <div class='row'>
 <pre class='small-12'>
 &lt;div class='row'>
-  &lt;div class='order-large-1 order-medium-2 order-small-3'>
+  &lt;div class='<strong>order-large-1 order-medium-2 order-small-3</strong>'>
     large: first&lt;br/>
     medium: second&lt;br/>
     small: third&lt;br/>
