@@ -7,42 +7,51 @@
   <body>
     <div class='container'>
     
-      <div class='row'>
+      <header class='row large-gutter'>
         <div class='small-12 medium-9'>
           <h1>simple responsive<br/> flexbox grid</h1>
-          <h3>demo</h3>
-          <h3><a href='docs.html'>documentation</a></h3>
-          <h3><a href='https://github.com/nihlton/simple-grid'>source</a></h3>
+          <h2>demo</h2>
+          <h2><a href='docs.html'>documentation</a></h2>
+          <h2><a href='https://github.com/nihlton/simple-grid'>source</a></h2>
         </div>
+        <hr class='show-for-small' />
+        <hr class='vertical hide-for-small' />
         <div class='small-12 medium-3'>
-          <h3>minimal syntax</h3>
+          <h2>minimal syntax</h2>
           <p>just add class name 'row' to a container, and let flex box handle it.  If you want precise control, use the familiar 12 column system.</p>
-        </div>        
+        </div>
+        <hr/>
         <div  class='small-6 medium-3'>
-          <h3>element light</h3>
+          <h2>element light</h2>
           <p>cells can be rows themselves, with cells of their own.  no unnecessary elements / nesting.</p>
         </div>
-
+        <hr class='vertical' />
+        
         <div class='small-6 medium-3'>
-          <h3>responsive</h3>
+          <h2>responsive</h2>
           <p>break points for mobile, tablet and desktop. Add class name 'small-n', 'medium-n' or 'large-n'.</p>
         </div>
+        <hr class='show-for-small' />
+        <hr class='vertical hide-for-small' />
+
         <div class='small-6 medium-3'>
-          <h3>equal column heights</h3>
+          <h2>equal column heights</h2>
           <p>
             no javascript hackery, just good clean fun.
           </p>
         </div>
+        <hr class='vertical' />
+
         <div class='small-6 medium-3'>
-          <h3>simple</h3>
+          <h2>simple</h2>
           <p>the guts of the grid system is just over 55 lines of SCSS.  about 400 lines compiled.</p>
         </div>
-      </div>
+      </header>
       <hr/>
       
       <h1>Gutters</h1>
       <div class='row no-gutter'>
-        <div class='small-12 medium-6'><h3>no gutter</h3></div>
+        <div class='small-12 medium-6'><h2>no gutter</h2></div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
       </div>    
@@ -54,7 +63,7 @@
       <hr/>
       
       <div class='row'>
-        <div class='small-12 medium-6'><h3>medium gutter</h3></div>
+        <div class='small-12 medium-6'><h2>medium gutter</h2></div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
       </div>
@@ -67,7 +76,7 @@
       <hr/>
       
       <div class='row large-gutter'>
-        <div class='small-12 medium-6'><h3>large gutter</h3></div>
+        <div class='small-12 medium-6'><h2>large gutter</h2></div>
         <div class='small-6 medium-3'>&nbsp;</div>
         <div class='small-6 medium-3'>&nbsp;</div>
       </div>
@@ -81,7 +90,7 @@
       <h1>Dividers</h1>
       <div class='row '>
         <hr />
-        <div class='small-12 medium-6'><h3>gapped</h3></div>
+        <div class='small-12 medium-6'><h2>gapped</h2></div>
         <hr class='show-for-small' />
         <hr class='vertical hide-for-small' />
         <div class='small-6 medium-3'>&nbsp;</div>
@@ -102,7 +111,7 @@
       
       <div class='row '>
         <hr />
-        <div class='small-12 medium-6'><h3>touching</h3></div>
+        <div class='small-12 medium-6'><h2>touching</h2></div>
         <hr class='show-for-small' />
         <hr class='touching vertical hide-for-small' />
         <div class='small-6 medium-3'>&nbsp;</div>
@@ -241,7 +250,7 @@
       <h1>utilities</h1>
       <div class='row'>
         <div class='small-12'>
-          <h3>.hide-for-[breakpoint], .show-for-[breakpoint]</h3>
+          <h2>.hide-for-[breakpoint], .show-for-[breakpoint]</h2>
         </div>
         <div class='hide-for-small'>this is <strong>not</strong> visible on small</div>
         <div class='hide-for-medium'>this is <strong>not</strong> visible on medium</div>
@@ -253,7 +262,7 @@
       
       <div class='row'>
         <div class='small-12'>
-          <h3>.order-[breakpoint]-[1...12]</h3>
+          <h2>.order-[breakpoint]-[1...12]</h2>
         </div>
         <div class='order-large-1 order-medium-2 order-small-3'>
           <div class='demo-bold-large'>large: first</div> 

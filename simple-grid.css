@@ -5,10 +5,14 @@ html * { box-sizing: inherit; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
 .container { padding: 2rem; margin: 0 auto; max-width: 100%; width: 60rem; }
+
 .row { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin: 0; padding: 0; }
+
 .row > * { flex-grow: 0; flex-shrink: 0; flex: 1; padding: 1em; }
+
 .row > hr { margin: .5rem; flex-basis: 100%; padding: 0; margin-top: -.5px; margin-bottom: -.5px; }
-.row > hr.vertical { margin: .5rem; flex-basis: 0px; height: auto; border-left: 1px solid #FFA6DE; max-width: 0px; margin-left: -.5px; margin-right: -.5px; }
+
+.row > hr.vertical { margin: .5rem; flex-basis: 0px; height: auto; border-left: 1px solid; max-width: 0px; margin-left: -.5px; margin-right: -.5px; }
 
 @media (max-width: 40em) { .show-for-medium { display: none; }
   .show-for-large { display: none; }
@@ -23,23 +27,41 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
   .hide-for-large { display: none; } }
 
 .row { margin: 0 calc( -1 * .5rem); }
+
 .row > *, .row > .row { margin: .5rem; }
+
 .row > .row:not(.no-padding) { padding: .5rem; }
+
 .row > hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
+
 .row .no-padding { margin: calc( -1 * (.5rem + 1em)); }
+
 .row.no-gutter { margin: 0 calc( -1 * .001px); }
+
 .row.no-gutter > hr { margin: .001px; margin-top: -.5px; margin-bottom: -.5px; }
+
 .row.no-gutter > hr.vertical { margin: .001px; margin-left: -.5px; margin-right: -.5px; }
+
 .row.no-gutter > hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
+
 .row.no-gutter > *, .row.no-gutter > .row { margin: .001px; }
+
 .row.no-gutter > .row:not(.no-padding) { padding: .001px; }
+
 .row.no-gutter .no-padding { margin: calc( -1 * (.001px + 1em)); }
+
 .row.large-gutter { margin: 0 calc( -1 * 1.5rem); }
+
 .row.large-gutter > hr { margin: 1.5rem; margin-top: -.5px; margin-bottom: -.5px; }
+
 .row.large-gutter > hr.vertical { margin: 1.5rem; margin-left: -.5px; margin-right: -.5px; }
+
 .row.large-gutter > hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
+
 .row.large-gutter > *, .row.large-gutter > .row { margin: 1.5rem; }
+
 .row.large-gutter > .row:not(.no-padding) { padding: 1.5rem; }
+
 .row.large-gutter .no-padding { margin: calc( -1 * (1.5rem + 1em)); }
 
 @media (min-width: 0em) { html { font-size: 16px; }
