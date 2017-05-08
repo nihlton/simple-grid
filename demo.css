@@ -20,9 +20,9 @@ header.row > * {
   box-shadow: 0 0 0 0.5px rgba(0,0,30,.3) inset;
 }
 
-.no-padding {
+.no-row-padding {
   background: none;
-  box-shadow: none;  
+  box-shadow: none;
 }
 
 h1, h2, h3 {
@@ -56,10 +56,11 @@ pre {
   overflow-x: auto;
 }
 
-a {color: #0095FF; text-decoration: none; }
-strong { font-weight: normal; color: #FF00A2; } 
+a {color: #0060a3;  }
+a[href] {color: #0095FF; text-decoration: none; }
+strong { font-weight: normal; color: #FF00A2; }
 dt, dd {
-    display: inline-block;
+  display: inline-block;
 }
 dt { width: 20%; color: #FF00A2 }
 dd { width: 75%; margin: 0; }
