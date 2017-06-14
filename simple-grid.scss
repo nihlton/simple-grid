@@ -1,8 +1,5 @@
+@import 'variables.scss';
 
-$textBreaks: (small: '16px', medium: '16px', large: '16px');
-$breaks: (small: '0em', medium: '40em', large: '64em');
-$gutters: (no: '.001px', medium: '.5rem', large: '1.5rem');
-$cell-padding: 1em;
 
 html, body {
   box-sizing: border-box;
@@ -10,14 +7,18 @@ html, body {
   padding: 0;
 }
 
-html * { box-sizing: inherit; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+html * {
+  box-sizing: inherit;
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+}
 
 .container {
-  padding: 2rem;
+  padding: 1.5rem;
   margin: 0 auto;
   max-width: 100%;
-  width: 60rem
+  width: 62rem
 }
 
 .row {
@@ -46,68 +47,57 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
   padding: 0;
   margin-top: -.5px;
   margin-bottom: -.5px;
+  border-style: solid;
 }
 
 .row > hr.vertical {
   margin: .5rem;
-  flex-basis: 0px;
+  flex-basis: 0;
   height: auto;
-  border-left: 1px solid;
-  max-width: 0px;
+  border-width: 0 1px 0 0;
+  max-width: 0;
   margin-left: -.5px;
   margin-right: -.5px;
 }
 
+.row > hr.touching.vertical {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: #{map-get($breaks, medium)}) {
-  .show-for-medium { display: none }
-  .show-for-large { display: none }
-  .hide-for-small { display: none }
+  .container { padding: 1.5rem; }
+  .show-for-medium { display: none !important; }
+  .show-for-large { display: none !important; }
+  .hide-for-small { display: none !important; }
 }
 
 @media (min-width: #{map-get($breaks, medium)}) and (max-width: #{map-get($breaks, large)}) {
-  .show-for-small { display: none }
-  .show-for-large { display: none }
-  .hide-for-medium { display: none }
+  .container { padding: 1.5rem; }
+  .show-for-small { display: none !important; }
+  .show-for-large { display: none !important; }
+  .hide-for-medium { display: none !important; }
 }
 
 @media (min-width: #{map-get($breaks, large)}) {
-  .show-for-small { display: none }
-  .show-for-medium { display: none }
-  .hide-for-large { display: none }
+  .container { padding: 2rem; }
+  .show-for-small { display: none !important; }
+  .show-for-medium { display: none !important; }
+  .hide-for-large { display: none !important; }
 }
-
-
-.row {
-  margin: 0 calc( -1 * #{map-get($gutters, medium)});
-  &> *, &> .row {margin: #{map-get($gutters, medium)};}
-  &> .row:not(.no-row-padding) { padding: #{map-get($gutters, medium)}; }
-  &> hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
-  .no-row-padding { margin: calc( -1 * (#{map-get($gutters, medium)} + #{$cell-padding})); }
-}
-
-@each $gName, $gValue in $gutters {
-  .row.#{$gName}-gutter {
-    @if $gName != 'medium' {
-      margin: 0 calc( -1 * #{$gValue});
-      &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
-      &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
-      &> hr.touching.vertical { margin: 0; margin-left: -.5px; margin-right: -.5px; }
-      &> *, &> .row {margin: #{$gValue};}
-      &> .row:not(.no-row-padding) {padding: #{$gValue}; }
-      .no-row-padding { margin: calc( -1 * (#{$gValue} + #{$cell-padding})); }
-    }
-  }
-}
-
 
 @each $sName, $sValue in $breaks {
   @media (min-width:  #{$sValue}) {
-    html { font-size: #{map-get($textBreaks, $sName)}}
     @for $i from 1 through 12 { .order-#{$sName}-#{$i} { order: #{ $i }; }}
     .row {
+      margin: 0 calc( -1 * #{map-get($gutters, medium)});
+
+      &> *, &> .row {margin: #{map-get($gutters, medium)};}
+      &> .row:not(.no-row-padding) { padding: #{map-get($gutters, medium)}; }
+      .no-row-padding { margin: calc( -1 * (#{map-get($gutters, medium)} + #{$cell-padding})); }
       @for $i from 1 through 12 {
         &> .#{$sName}-#{$i} {
-          flex-basis: calc( #{( $i / 12 )*100 + '%'} - ( #{map-get($gutters, medium)} * 2));
+          flex-basis: calc(  #{( $i / 12 )*100 + '%'} - ( #{map-get($gutters, medium)} * 2));
           max-width: calc( #{( $i / 12 )*100 + '%'} - ( #{map-get($gutters, medium)} * 2));
         }
       }
@@ -118,13 +108,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
           max-width: calc( #{( $i / 12 )*100 + '%'} + calc( #{$cell-padding} * 2) );
         }
       }
-      @for $i from 0 through 12 {
-        &> .offset-#{$sName}-#{$i} { margin-left:  calc((( #{$i} / 12 )*100%) + #{map-get($gutters, medium)} ); }
+      @for $i from 1 through 12 {
+        &> .offset-#{$sName}-#{$i - 1} { margin-left:  calc((( #{$i - 1} / 12 )*100%) + #{map-get($gutters, medium)} ) !important; }
       }
     }
     @each $gName, $gValue in $gutters {
       .row.#{$gName}-gutter {
         @if $gName != 'medium' {
+          margin: 0 calc( -1 * #{$gValue});
+
+          &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
+          &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
+          &> *, &> .row {margin: #{$gValue};}
+          &> .row:not(.no-row-padding) {padding: #{gValue}; }
+          .no-row-padding { margin: calc( -1 * (#{$gValue} + #{$cell-padding})); }
           @for $i from 1 through 12 {
             &> .#{$sName}-#{$i} {
               flex-basis: calc( #{($i/12)*100 + '%'} - ( #{$gValue} * 2));
@@ -138,8 +135,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helve
               max-width: calc( #{($i/12)*100 + '%'} + ( #{$cell-padding} * 2) );
             }
           }
-          @for $i from 0 through 12 {
-            &> .offset-#{$sName}-#{$i} { margin-left:  calc((( #{$i} / 12 )*100%) + #{$gValue} ); }
+          @for $i from 1 through 12 {
+            &> .offset-#{$sName}-#{$i - 1} { margin-left:  calc((( #{$i - 1} / 12 )*100%) + #{$gValue} ) !important;; }
           }
         }
       }

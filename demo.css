@@ -4,7 +4,8 @@ for this demo
 
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
-html {transition: font-size .5s ease; }
+html { transition: font-size .5s ease; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
 .row > * {
   background: rgba(0,0,30,.09);
