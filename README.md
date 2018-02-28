@@ -1,9 +1,9 @@
 # simple-grid
 simple responsive flexbox grid
 
-DEMO: http://gregtaff.com/misc/simple-grid
+DEMO: https://nihlton.github.io/simple-grid/
 
-DOCS: http://gregtaff.com/misc/simple-grid/docs.html
+DOCS: https://nihlton.github.io/simple-grid/docs.html
 
 # setup
 
