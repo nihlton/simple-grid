@@ -5,25 +5,27 @@ for this demo
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 html { transition: font-size .5s ease; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 3rem 0;}
 
 .row > * {
-  background: rgba(0,0,30,.09);
-  box-shadow: 0 0 1rem rgba(255,255,255,.35);
+  background: rgba(0,0,0,.05);
+  outline: 1px dashed rgba(0,0,0, .2);
+  outline-offset: -1px;
 }
 
 header.row > * {
   padding: 0;
   background: none;
+  outline: none;
 }
 
 .row.no-gutter > * {
-  box-shadow: 0 0 0 0.5px rgba(0,0,30,.3) inset;
+
 }
 
 .no-row-padding {
   background: none;
-  box-shadow: none;
+  outline: none;
 }
 
 h1, h2, h3 {
@@ -32,7 +34,9 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-h1 { font-size: 2.25rem; }
+h1 {
+  font-size: 2.25rem;
+}
 
 h2 {
   font-family: 'Oswald', sans-serif;
@@ -47,19 +51,20 @@ hr {
   border: 0;
   border-bottom: 1px solid;
   border-color: #aaa !important;
-  margin: 1rem 0 1.5rem;
+  outline: none  !important;
 }
 
 pre {
   font-family: 'Roboto Mono', monospace;
-  outline: 1px solid #aaa;
+  outline: 5px solid rgba(0,0,0,.06);
   background: white !important;
   overflow-x: auto;
+  outline-offset: -5px;
 }
 
 a {color: #0060a3;  }
 a[href] {color: #0095FF; text-decoration: none; }
-strong { font-weight: normal; color: #FF00A2; }
+strong { font-weight: normal; color: #FF00A2; text-shadow: .5px 0 #FF00A2; }
 dt, dd {
   display: inline-block;
 }

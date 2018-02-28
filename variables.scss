@@ -1,7 +1,8 @@
 $textBreaks: (small: '14px', medium: '14px', large: '14px');
-$breaks: (small: '0em', medium: '40em', large: '64em');
+$grid-breaks: (small: '0rem', medium: '40rem', large: '64rem');
+$breaks: (small: '0', smallEnd: '39.9rem', medium: '40rem', mediumEnd: '63.9rem', large: '64rem');
 $gutters: (no: '.001px', small: '.125rem', medium: '.5rem', large: '1.5rem');
-$cell-padding: .5em;
+$cell-padding: .5rem;
 
 $small-only: (max-width: 40em);
 $medium-only: (min-width: 40em) and (max-width: 64em);
