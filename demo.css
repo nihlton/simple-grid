@@ -40,7 +40,6 @@ h1 {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  margin: 0;
 }
 
 
@@ -53,6 +52,7 @@ hr {
   border-bottom: 1px solid;
   border-color: #aaa !important;
   outline: none  !important;
+  margin: 3rem 0;
 }
 
 pre {
