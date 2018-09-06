@@ -1,10 +1,18 @@
-$textBreaks: (small: '14px', medium: '14px', large: '14px');
-$grid-breaks: (small: '0rem', medium: '40rem', large: '64rem');
-$breaks: (small: '0', smallEnd: '39.9rem', medium: '40rem', mediumEnd: '63.9rem', large: '64rem');
-$gutters: (no: '.001px', small: '.125rem', medium: '.5rem', large: '1.5rem');
+$document-width: 90rem;
+
+$textBreaks: (small: 12px, medium: 14px, large: 14px);
+$breaks: (small: 0px, medium: 560px, large: 896px );
+$gutters: (no: 0rem, small: .125rem, medium: .5rem, large: 1.5rem);
 $cell-padding: .5rem;
 
-$small-only: (max-width: 40em);
-$medium-only: (min-width: 40em) and (max-width: 64em);
-$large-only: (min-width: 64em);
+$small-only: "(max-width: #{map-get($breaks, medium)})";
+$medium-only: "(min-width: #{map-get($breaks, medium) + 1px}) and (max-width: #{map-get($breaks, large) - 1px} )";
+$large-only: "(min-width: #{map-get($breaks, large)})";
+$small-and-medium: "(max-width: #{map-get($breaks, large)  - 1px})";
 
+@mixin container-style() {
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: $document-width;
+}
