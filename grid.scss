@@ -39,25 +39,6 @@ html * {
   padding: 0;
 }
 
-.row > hr {
-  margin: .5rem;
-  flex-basis: 100%;
-  padding: 0;
-  margin-top: -.5px;
-  margin-bottom: -.5px;
-}
-
-.row > hr.vertical {
-  margin: .5rem;
-  flex-basis: 0;
-  height: auto;
-  border-width: 0 1px 0 0;
-  max-width: 0;
-  margin-left: -.5px;
-  margin-right: -.5px;
-}
-
-
 @media #{$small-only} {
   .container { padding: 1.5rem; }
   .show-for-medium { display: none !important; }
@@ -110,8 +91,6 @@ html * {
         @if $gName != 'medium' {
           margin: 0 #{-1 * $gValue};
 
-          &> hr { margin: #{$gValue}; margin-top: -.5px; margin-bottom: -.5px;}
-          &> hr.vertical { margin: #{$gValue}; margin-left: -.5px; margin-right: -.5px;}
           &> *, &> .row {margin: #{$gValue};}
           &> .row:not(.no-row-padding) {padding: #{$gValue}; }
           &.no-row-padding { margin: #{-1 * ($gValue + $cell-padding)}; }
