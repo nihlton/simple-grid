@@ -7,6 +7,10 @@ DOCS: https://nihlton.github.io/simple-grid/docs.html
 
 # setup
 
-``npm install``
+In the console
 
-``npm run build``
+``yarn add simpl-grid``
+
+In your project
+
+``import 'simpl-grid/grid.css';``
