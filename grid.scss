@@ -1,5 +1,15 @@
 @import 'variables.scss';
 
+@function round-it($number) {
+  $n: 1000;
+  $val: floor($number * $n) / $n;
+
+  @if $val == floor($val) {
+    $val: $val + '.000'
+  }
+
+  @return $val;
+}
 
 html, body {
   box-sizing: border-box;
@@ -62,44 +72,52 @@ html * {
   .hide-for-large { display: none !important; }
 }
 
+
+.row {
+  --gutter-x2: #{map-get($gutters, medium) + map-get($gutters, medium)};
+  --gutter-neg: #{-1 * map-get($gutters, medium)};
+  --gutter: #{map-get($gutters, medium)};
+  margin: 0 var(--gutter-neg);
+
+  &> hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px;}
+  &> hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px;}
+  &> *, &> .row {margin: var(--gutter);}
+  &> .row:not(.no-row-padding) { padding: var(--gutter); }
+  &.no-row-padding { margin: calc( var(--gutter-neg) + #{ $cell-padding}) ; }
+}
+
+@each $gName, $gValue in $gutters {
+  .row.#{$gName}-gutter {
+    @if $gName != 'medium' {
+      --gutter-x2: #{$gValue + $gValue};
+      --gutter-neg: #{-1 * $gValue};
+      --gutter: #{$gValue};
+    }
+  }
+}
+
+
 @each $sName, $sValue in $breaks {
   @media (min-width:  #{$sValue}) {
-    @for $i from 1 through 12 { .order-#{$sName}-#{$i} { order: #{ $i }; }}
     .row {
-      --gutter-x2: #{map-get($gutters, medium) + map-get($gutters, medium)};
-      --gutter-neg: #{-1 * map-get($gutters, medium)};
-      --gutter: #{map-get($gutters, medium)};
-      margin: 0 var(--gutter-neg);
-
-      &> hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px;}
-      &> hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px;}
-      &> *, &> .row {margin: var(--gutter);}
-      &> .row:not(.no-row-padding) { padding: var(--gutter); }
-      &.no-row-padding { margin: calc( var(--gutter-neg) + #{ $cell-padding}) ; }
-
-      @for $i from 1 through 12 {
-        &> .#{$sName}-#{$i} {
-          --cell-width: calc(  #{( $i / 12 ) * 100 + '%'} - var(--gutter-x2));
-        }
-      }
-      @for $i from 1 through 12 {
+      @for $i from 12 through 1 {
         &> .#{$sName}-#{$i}.no-row-padding {
           margin: #{-1 * $cell-padding};
-          --cell-width:  calc( #{( $i / 12 ) * 100 + '%'} + #{$cell-padding + $cell-padding} );
+          --cell-width:  calc( #{round-it(( $i / 12 ) * 100) + '%'} + #{$cell-padding + $cell-padding} );
         }
       }
-      @for $i from 0 through 11 {
-        &> .offset-#{$sName}-#{$i} { margin-left:  calc(#{( $i / 12 ) * 100 + '%'} + var(--gutter) ) !important; }
+
+      @for $i from 11 through 0 {
+        &> .offset-#{$sName}-#{$i} { margin-left:  calc(#{round-it(( $i / 12 ) * 100) + '%'} + var(--gutter) ) !important; }
       }
-    }
-    @each $gName, $gValue in $gutters {
-      .row.#{$gName}-gutter {
-        @if $gName != 'medium' {
-          --gutter-x2: #{$gValue + $gValue};
-          --gutter-neg: #{-1 * $gValue};
-          --gutter: #{$gValue};
+
+
+      @for $i from 12 through 0 {
+        &> .#{$sName}-#{$i} {
+          --cell-width: calc(  #{round-it(( $i / 12 ) * 100) + '%'} - var(--gutter-x2));
         }
       }
     }
+    @for $i from 12 through 1 { .order-#{$sName}-#{$i} { order: #{ $i }; }}
   }
 }
