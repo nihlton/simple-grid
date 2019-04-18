@@ -12,10 +12,6 @@ html *:before, html *:after { box-sizing: inherit; }
 
 .row > *.no-cell-padding { padding: 0; }
 
-.row > hr { margin: .5rem; flex-basis: 100%; padding: 0; margin-top: -.5px; margin-bottom: -.5px; }
-
-.row > hr.vertical { margin: .5rem; flex-basis: 0; height: auto; border-width: 0 1px 0 0; max-width: 0; margin-left: -.5px; margin-right: -.5px; }
-
 @media (max-width: 560px) { .container { padding: 1.5rem; }
   .show-for-medium { display: none !important; }
   .show-for-large { display: none !important; }
