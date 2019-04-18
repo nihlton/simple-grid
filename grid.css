@@ -40,8 +40,8 @@ html *:before, html *:after { box-sizing: inherit; }
   .order-small-11 { order: 11; }
   .order-small-12 { order: 12; }
   .row { --gutter-x2: 1rem; --gutter-neg: -0.5rem; --gutter: 0.5rem; margin: 0 var(--gutter-neg); }
-  .row > hr { margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
-  .row > hr.vertical { margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
+  .row > hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
+  .row > hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
   .row > *, .row > .row { margin: var(--gutter); }
   .row > .row:not(.no-row-padding) { padding: var(--gutter); }
   .row.no-row-padding { margin: calc( var(--gutter-neg) + 0.5rem); }
@@ -98,8 +98,8 @@ html *:before, html *:after { box-sizing: inherit; }
   .order-medium-11 { order: 11; }
   .order-medium-12 { order: 12; }
   .row { --gutter-x2: 1rem; --gutter-neg: -0.5rem; --gutter: 0.5rem; margin: 0 var(--gutter-neg); }
-  .row > hr { margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
-  .row > hr.vertical { margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
+  .row > hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
+  .row > hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
   .row > *, .row > .row { margin: var(--gutter); }
   .row > .row:not(.no-row-padding) { padding: var(--gutter); }
   .row.no-row-padding { margin: calc( var(--gutter-neg) + 0.5rem); }
@@ -156,8 +156,8 @@ html *:before, html *:after { box-sizing: inherit; }
   .order-large-11 { order: 11; }
   .order-large-12 { order: 12; }
   .row { --gutter-x2: 1rem; --gutter-neg: -0.5rem; --gutter: 0.5rem; margin: 0 var(--gutter-neg); }
-  .row > hr { margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
-  .row > hr.vertical { margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
+  .row > hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px; }
+  .row > hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px; }
   .row > *, .row > .row { margin: var(--gutter); }
   .row > .row:not(.no-row-padding) { padding: var(--gutter); }
   .row.no-row-padding { margin: calc( var(--gutter-neg) + 0.5rem); }

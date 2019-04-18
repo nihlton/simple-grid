@@ -71,8 +71,8 @@ html * {
       --gutter: #{map-get($gutters, medium)};
       margin: 0 var(--gutter-neg);
 
-      &> hr { margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px;}
-      &> hr.vertical { margin: var(--gutter); margin-left: -.5px; margin-right: -.5px;}
+      &> hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px;}
+      &> hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px;}
       &> *, &> .row {margin: var(--gutter);}
       &> .row:not(.no-row-padding) { padding: var(--gutter); }
       &.no-row-padding { margin: calc( var(--gutter-neg) + #{ $cell-padding}) ; }
