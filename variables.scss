@@ -1,6 +1,7 @@
 $breaks: (small: 0px, medium: 720px, large: 1023px );
 $gutters: (no: 0rem, small: .125rem, medium: .5rem, large: 1.5rem);
 $cell-padding: .5rem;
+$document-width: 80rem;
 
 $small-only: "(max-width: #{map-get($breaks, medium)})";
 $medium-only: "(min-width: #{map-get($breaks, medium) + 1px}) and (max-width: #{map-get($breaks, large) - 1px} )";

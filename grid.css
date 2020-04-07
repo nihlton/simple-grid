@@ -4,7 +4,7 @@ html * { box-sizing: inherit; }
 
 html *:before, html *:after { box-sizing: inherit; }
 
-.container { padding: 1.5rem; margin: 0 auto; max-width: 100%; width: 90rem; }
+.container { padding: 1.5rem; margin: 0 auto; max-width: 100%; width: 80rem; }
 
 .row { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; margin: 0; padding: 0; }
 
@@ -12,17 +12,17 @@ html *:before, html *:after { box-sizing: inherit; }
 
 .row > *.no-cell-padding { padding: 0; }
 
-@media (max-width: 560px) { .container { padding: 1.5rem; }
+@media (max-width: 720px) { .container { padding: 1.5rem; }
   .show-for-medium { display: none !important; }
   .show-for-large { display: none !important; }
   .hide-for-small { display: none !important; } }
 
-@media (min-width: 561px) and (max-width: 895px) { .container { padding: 1.5rem; }
+@media (min-width: 721px) and (max-width: 1022px) { .container { padding: 1.5rem; }
   .show-for-small { display: none !important; }
   .show-for-large { display: none !important; }
   .hide-for-medium { display: none !important; } }
 
-@media (min-width: 896px) { .container { padding: 2rem; }
+@media (min-width: 1023px) { .container { padding: 2rem; }
   .show-for-small { display: none !important; }
   .show-for-medium { display: none !important; }
   .hide-for-large { display: none !important; } }
@@ -95,7 +95,7 @@ html *:before, html *:after { box-sizing: inherit; }
   .order-small-2 { order: 2; }
   .order-small-1 { order: 1; } }
 
-@media (min-width: 560px) { .row > .medium-12.no-row-padding { margin: -0.5rem; --cell-width:  calc( 100.000% + 1rem ); }
+@media (min-width: 720px) { .row > .medium-12.no-row-padding { margin: -0.5rem; --cell-width:  calc( 100.000% + 1rem ); }
   .row > .medium-11.no-row-padding { margin: -0.5rem; --cell-width:  calc( 91.666% + 1rem ); }
   .row > .medium-10.no-row-padding { margin: -0.5rem; --cell-width:  calc( 83.333% + 1rem ); }
   .row > .medium-9.no-row-padding { margin: -0.5rem; --cell-width:  calc( 75.000% + 1rem ); }
@@ -145,7 +145,7 @@ html *:before, html *:after { box-sizing: inherit; }
   .order-medium-2 { order: 2; }
   .order-medium-1 { order: 1; } }
 
-@media (min-width: 896px) { .row > .large-12.no-row-padding { margin: -0.5rem; --cell-width:  calc( 100.000% + 1rem ); }
+@media (min-width: 1023px) { .row > .large-12.no-row-padding { margin: -0.5rem; --cell-width:  calc( 100.000% + 1rem ); }
   .row > .large-11.no-row-padding { margin: -0.5rem; --cell-width:  calc( 91.666% + 1rem ); }
   .row > .large-10.no-row-padding { margin: -0.5rem; --cell-width:  calc( 83.333% + 1rem ); }
   .row > .large-9.no-row-padding { margin: -0.5rem; --cell-width:  calc( 75.000% + 1rem ); }
