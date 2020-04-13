@@ -13,3 +13,10 @@ $large-only: "(min-width: #{map-get($breaks, large)})";
   max-width: 100%;
   width: $document-width;
 }
+
+:export {
+  small: 0;
+  medium: map-get($breaks, medium);
+  large: map-get($breaks, large);
+  $document-width: $document-width;
+}

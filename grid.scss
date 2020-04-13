@@ -24,8 +24,7 @@ html * {
   }
 }
 
-
-.container {
+.grid-container {
   @include container-style();
 }
 
