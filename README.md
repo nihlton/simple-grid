@@ -24,9 +24,9 @@ Keeping gutters consistent, and only between columns (and not between the column
 gutters are as follows:
 
   - **no-gutter**: 0
-  - **small**: .125rem
-  - **medium**: .5rem
-  - **large**: 1.5rem
+  - **small-gutter**: .125rem
+  - **medium-gutter**: .5rem
+  - **large-gutter**: 1.5rem
 
 ## Break points
 
