@@ -19,6 +19,15 @@ In your project
 
 # Notes
 
+Keeping gutters consistent, and only between columns (and not between the columns and the row container) requires the use of negative margins (for now).  This means your rows will need to be wrapped with padding equal to the column gutter - otherwise, a horizontal scroll bar will appear when the viewport is the same width as the row container.
+
+gutters are as follows:
+
+  - **no-gutter**: 0
+  - **small**: .125rem
+  - **medium**: .5rem
+  - **large**: 1.5rem
+
 ## Break points
 
 Simpl-grid is opinionated about your break points, which is kind of unavoidable for a CSS only package.  
