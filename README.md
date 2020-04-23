@@ -36,7 +36,7 @@ Simpl-grid is opinionated about your break points, which is kind of unavoidable 
   - **medium**: starts at 721px and ends at 1023px
   - **large**: starts at 1024px
 
-you can import the break-point configurations are exported from `simpl-grid/variables.scss` so you can import them either into your own SASS, or even javascript.  You may need some configuration changes for this to work.  Read: [import sass variables into javascript](https://www.google.com/search?q=import+sass+variables+into+javascript)
+you can import the break-point configurations from `simpl-grid/variables.scss` should you need these values in your own SASS, or even javascript.  You may need some configuration changes to import SASS variables into your JS.  Read: [import sass variables into javascript](https://www.google.com/search?q=import+sass+variables+into+javascript)
 
 ```javascript
   import grid_vars from 'simpl-grid/variables.scss'
