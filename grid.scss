@@ -51,21 +51,21 @@ html * {
 }
 
 @media #{$small-only} {
-  .container { padding: 1.5rem; }
+  .grid-container { padding: 1.5rem; }
   .show-for-medium { display: none !important; }
   .show-for-large { display: none !important; }
   .hide-for-small { display: none !important; }
 }
 
 @media #{$medium-only} {
-  .container { padding: 1.5rem; }
+  .grid-container { padding: 1.5rem; }
   .show-for-small { display: none !important; }
   .show-for-large { display: none !important; }
   .hide-for-medium { display: none !important; }
 }
 
 @media #{$large-only} {
-  .container { padding: 2rem; }
+  .grid-container { padding: 2rem; }
   .show-for-small { display: none !important; }
   .show-for-medium { display: none !important; }
   .hide-for-large { display: none !important; }
