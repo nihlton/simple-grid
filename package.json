@@ -1,10 +1,10 @@
 {
   "name": "simpl-grid",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "simple responsive flexbox grid",
   "main": "index.js",
   "scripts": {
-    "build": "sass grid.scss grid.css"
+    "build": "sass --style=compressed grid.scss grid.css"
   },
   "repository": {
     "type": "git",
