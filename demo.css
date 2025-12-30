@@ -5,7 +5,12 @@ for this demo
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
 html { transition: font-size .5s ease; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 3rem 0;}
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+  padding: 3rem;
+  max-width: 100rem;
+  margin: auto;
+}
 
 .row > * {
   background: rgba(0,0,0,.05);
@@ -96,3 +101,4 @@ dd { width: 75%; margin: 0; }
   .demo-bold-medium { color: inherit; }
   .demo-bold-large { color: #FF00A2; }
 }
+
