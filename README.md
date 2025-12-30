@@ -24,8 +24,8 @@ Version 2 Brings some small changes to gutter classes, and introduces responsive
 gutters sizes are as follows:
 
   - **none**: 0
-  - **close**: .125rem
-  - **default**: .5rem
+  - **close**: 0.125rem
+  - **default**: 0.5rem
   - **open**: 1.5rem
 
 None responsive gutters: **.gutter-[size]**
