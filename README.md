@@ -11,7 +11,7 @@ DOCS: https://nihlton.github.io/simple-grid/docs.html
 
 In the console
 
-``yarn add simpl-grid``
+``npm add simpl-grid``
 
 In your project
 
@@ -19,14 +19,17 @@ In your project
 
 # Notes
 
-Keeping gutters consistent, and only between columns (and not between the columns and the row container) requires the use of negative margins (for now).  This means your rows will need to be wrapped with padding equal to the column gutter - otherwise, a horizontal scroll bar will appear when the viewport is the same width as the row container.
+Version 2 Brings some small changes to gutter classes, and introduces responsive gutters.
 
-gutters are as follows:
+gutters sizes are as follows:
 
-  - **no-gutter**: 0
-  - **small-gutter**: .125rem
-  - **medium-gutter**: .5rem
-  - **large-gutter**: 1.5rem
+  - **none**: 0
+  - **close**: .125rem
+  - **default**: .5rem
+  - **open**: 1.5rem
+
+None responsive gutters: **.gutter-[size]**
+Responsive gutters: **.gutter-[break-point]-[size]**
 
 ## Break points
 
@@ -36,10 +39,10 @@ Simpl-grid is opinionated about your break points, which is kind of unavoidable 
   - **medium**: starts at 721px and ends at 1023px
   - **large**: starts at 1024px
 
-you can import the break-point configurations from `simpl-grid/variables.scss` should you need these values in your own SASS, or even javascript.  You may need some configuration changes to import SASS variables into your JS.  Read: [import sass variables into javascript](https://www.google.com/search?q=import+sass+variables+into+javascript)
+you can import the break-point configurations from `simpl-grid/variables.scss` should you need these values in your own SASS, or even javascript.  You may need some configuration changes to import SASS variables into your JS.
 
 ```javascript
-  import grid_vars from 'simpl-grid/variables.scss'
+  import * as grid_vars from 'simpl-grid/variables.module.scss';
   console.log(grid_vars)
 ```
 
