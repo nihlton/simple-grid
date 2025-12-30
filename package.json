@@ -1,10 +1,10 @@
 {
   "name": "simpl-grid",
-  "version": "1.0.6",
+  "version": "2.0.6",
   "description": "simple responsive flexbox grid",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass --precision 3 --output-style compact grid.scss grid.css"
+    "build": "sass grid.scss grid.css"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://github.com/nihlton/simple-grid",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "eslint": "^9.39.2",
+    "sass": "^1.95.1"
   }
 }

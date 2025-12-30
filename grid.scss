@@ -1,17 +1,20 @@
-@import 'variables.scss';
+@use "sass:map";
+@use "sass:math";
+@use "./variables.module.scss" as gridVars;
 
 @function round-it($number) {
   $n: 1000;
-  $val: floor($number * $n) / $n;
+  $val: calc(math.floor($number * $n) / $n);
 
-  @if $val == floor($val) {
-    $val: $val + '.000'
+  @if $val == math.floor($val) {
+    $val: $val + ".000";
   }
 
   @return $val;
 }
 
-html, body {
+html,
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,13 +22,10 @@ html, body {
 
 html * {
   box-sizing: inherit;
-  &:before, &:after {
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
-}
-
-.grid-container {
-  @include container-style();
 }
 
 .row {
@@ -35,88 +35,123 @@ html * {
   justify-content: flex-start;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  --cell-padding: 0.5em;
 }
-
-.row > * {
-  --cell-width: auto;
-  max-width: var(--cell-width);
-  flex-basis: var(--cell-width);
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: #{$cell-padding};
-}
-
-.row > *.no-cell-padding {
-  padding: 0;
-}
-
-@media #{$small-only} {
-  .grid-container { padding: 1.5rem; }
-  .show-for-medium { display: none !important; }
-  .show-for-large { display: none !important; }
-  .hide-for-small { display: none !important; }
-}
-
-@media #{$medium-only} {
-  .grid-container { padding: 1.5rem; }
-  .show-for-small { display: none !important; }
-  .show-for-large { display: none !important; }
-  .hide-for-medium { display: none !important; }
-}
-
-@media #{$large-only} {
-  .grid-container { padding: 2rem; }
-  .show-for-small { display: none !important; }
-  .show-for-medium { display: none !important; }
-  .hide-for-large { display: none !important; }
-}
-
 
 .row {
-  --gutter-x2: #{map-get($gutters, medium) + map-get($gutters, medium)};
-  --gutter-neg: #{-1 * map-get($gutters, medium)};
-  --gutter: #{map-get($gutters, medium)};
-  margin: 0 var(--gutter-neg);
-
-  &> hr { width: 100%; margin: var(--gutter); margin-top: -.5px; margin-bottom: -.5px;}
-  &> hr.vertical { height: 100%; margin: var(--gutter); margin-left: -.5px; margin-right: -.5px;}
-  &> *, &> .row {margin: var(--gutter);}
-  &> .row:not(.no-row-padding) { padding: var(--gutter); }
-  &.no-row-padding { margin: calc( var(--gutter-neg) + #{ $cell-padding}) ; }
-}
-
-@each $gName, $gValue in $gutters {
-  .row.#{$gName}-gutter {
-    @if $gName != 'medium' {
-      --gutter-x2: #{$gValue + $gValue};
-      --gutter-neg: #{-1 * $gValue};
-      --gutter: #{$gValue};
-    }
+  &:has(.row),
+  + .row {
+    margin: var(--gutter) 0;
   }
 }
 
+.row > .row {
+  margin: 0;
+}
 
-@each $sName, $sValue in $breaks {
+.row > * {
+  flex: 1 1 0;
+  box-sizing: border-box;
+  padding: var(--cell-padding);
+}
+
+.row > *.no-cell-padding {
+  --cell-padding: 0;
+}
+.row.no-row-padding {
+  --cell-padding: 0;
+}
+
+@media #{gridVars.$small-only} {
+  .show-for-medium {
+    display: none !important;
+  }
+  .show-for-large {
+    display: none !important;
+  }
+  .hide-for-small {
+    display: none !important;
+  }
+}
+
+@media #{gridVars.$medium-only} {
+  .show-for-small {
+    display: none !important;
+  }
+  .show-for-large {
+    display: none !important;
+  }
+  .hide-for-medium {
+    display: none !important;
+  }
+}
+
+@media #{gridVars.$large-only} {
+  .show-for-small {
+    display: none !important;
+  }
+  .show-for-medium {
+    display: none !important;
+  }
+  .hide-for-large {
+    display: none !important;
+  }
+}
+
+.row {
+  --gutter: #{map.get(gridVars.$gutters, default)};
+  gap: var(--gutter);
+  box-sizing: border-box;
+
+  & > hr {
+    flex: 0 0 100%;
+    margin-top: -0.5px;
+    margin-bottom: -0.5px;
+  }
+}
+
+@each $gName, $gValue in gridVars.$gutters {
+  .row.gutter-#{$gName} {
+    --gutter: #{$gValue};
+  }
+}
+
+.row {
+  @for $i from 12 through 1 {
+    --width-#{$i}: calc(#{round-it(calc(($i / 12) * 100)) + "%"} - var(--gutter) * #{round-it(calc((12 - $i) / 12))});
+  }
+  @for $i from 12 through 1 {
+    --offset-#{$i}: calc(#{round-it(calc(($i / 12) * 100)) + "%"} + var(--gutter) * #{round-it(calc($i / 12))});
+  }
+}
+
+@each $sName, $sValue in gridVars.$breaks {
   @media (min-width:  #{$sValue}) {
     .row {
+      @each $gName, $gValue in gridVars.$gutters {
+        &.gutter-#{$sName}-#{$gName} {
+          --gutter: #{$gValue};
+        }
+      }
+
       @for $i from 12 through 1 {
-        &> .#{$sName}-#{$i}.no-row-padding {
-          margin: #{-1 * $cell-padding};
-          --cell-width:  calc( #{round-it(( $i / 12 ) * 100) + '%'} + #{$cell-padding + $cell-padding} );
+        & > .#{$sName}-#{$i} {
+          max-width: var(--width-#{$i});
+          flex: 0 0 var(--width-#{$i});
         }
       }
 
       @for $i from 11 through 0 {
-        &> .offset-#{$sName}-#{$i} { margin-left:  calc(#{round-it(( $i / 12 ) * 100) + '%'} + var(--gutter) ) !important; }
-      }
-
-
-      @for $i from 12 through 0 {
-        &> .#{$sName}-#{$i} {
-          --cell-width: calc(  #{round-it(( $i / 12 ) * 100) + '%'} - var(--gutter-x2));
+        & > .offset-#{$sName}-#{$i} {
+          margin-left: var(--offset-#{$i});
         }
       }
     }
-    @for $i from 12 through 1 { .order-#{$sName}-#{$i} { order: #{ $i }; }}
+    @for $i from 12 through 1 {
+      .order-#{$sName}-#{$i} {
+        order: #{$i};
+      }
+    }
   }
 }
