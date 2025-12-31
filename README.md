@@ -29,6 +29,7 @@ gutters sizes are as follows:
   - **open**: 1.5rem
 
 None responsive gutters: **.gutter-[size]**
+
 Responsive gutters: **.gutter-[break-point]-[size]**
 
 ## Break points
