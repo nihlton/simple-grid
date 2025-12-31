@@ -15,7 +15,7 @@ In the console
 
 In your project
 
-``import 'simpl-grid/grid.css';``
+``import 'simpl-grid';``
 
 # Notes
 
