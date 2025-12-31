@@ -39,11 +39,31 @@ Simpl-grid is opinionated about your break points, which is kind of unavoidable 
   - **medium**: starts at 721px and ends at 1023px
   - **large**: starts at 1024px
 
-you can import the break-point configurations from `simpl-grid/variables.scss` should you need these values in your own SASS, or even javascript.  You may need some configuration changes to import SASS variables into your JS.
+## Import Grid Values
+
+you can import the break-point configurations from `simpl-grid` should you need these values in your own SASS, or even javascript.  
 
 ```javascript
-  import * as grid_vars from 'simpl-grid/variables.module.scss';
+  import * as grid_vars from 'simpl-grid/vars';
   console.log(grid_vars)
+```
+
+```scss
+@use 'simpl-grid/dist/vars.module.scss' as gridVars;
+
+$small-and-medium: '(max-width: #{map.get(gridVars.$breakPoints, large) - 1px})';
+
+@media (hover: none) and (#{$small-and-medium}) {
+  .my-class {
+    ...
+  }
+}
+
+@media #{gridVars.$mediumOnly} {
+  .my-class {
+    ...
+  }
+}
 ```
 
 ## The Future
