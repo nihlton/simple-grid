@@ -22,4 +22,4 @@ export const documentWidth = "80rem";
 
 export const smallOnly = `"(max-width: ${breaks.medium}px)"`;
 export const mediumOnly = `"(min-width: ${breaks.medium + 1}px) and (max-width: ${breaks.large - 1}px )"`;
-export const largeOnly = `"(min-width: ${breaks.large})"`;
+export const largeOnly = `"(min-width: ${breaks.large}px)"`;

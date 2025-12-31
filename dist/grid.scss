@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:math";
-@use "./vars.scss" as gridVars;
+@use "./vars.module.scss" as gridVars;
 
 @function round-it($number) {
   $n: 1000;

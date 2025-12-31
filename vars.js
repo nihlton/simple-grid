@@ -21,4 +21,4 @@ exports.cellPadding = "0.5rem";
 exports.documentWidth = "80rem";
 exports.smallOnly = "\"(max-width: ".concat(breaks.medium, "px)\"");
 exports.mediumOnly = "\"(min-width: ".concat(breaks.medium + 1, "px) and (max-width: ").concat(breaks.large - 1, "px )\"");
-exports.largeOnly = "\"(min-width: ".concat(breaks.large, ")\"");
+exports.largeOnly = "\"(min-width: ".concat(breaks.large, "px)\"");

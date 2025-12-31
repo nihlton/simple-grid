@@ -1,13 +1,16 @@
 {
   "name": "simpl-grid",
-  "version": "2.0.11",
+  "version": "2.0.14",
   "description": "simple responsive flexbox grid",
   "sideEffects": [
     "**/*.css",
     "**/*.scss"
   ],
   "files": [
-    "dist"
+    "dist",
+    "vars.ts",
+    "vars.js",
+    "vars.d.ts"
   ],
   "main": "dist/grid.css",
   "style": "dist/grid.css",
