@@ -1,0 +1,153 @@
+@use "sass:map";
+@use "sass:math";
+@use "./vars.scss" as gridVars;
+
+@function round-it($number) {
+  $n: 1000;
+  $val: calc(math.floor($number * $n) / $n);
+
+  @if $val == math.floor($val) {
+    $val: $val + ".000";
+  }
+
+  @return $val;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html * {
+  box-sizing: inherit;
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --cell-padding: 0.5em;
+}
+
+.row:has(.row),
+.row + .row {
+  margin: var(--gutter) 0;
+}
+
+.row > .row {
+  margin: 0;
+}
+.row > * {
+  flex: 1 1 0;
+  box-sizing: border-box;
+  padding: var(--cell-padding);
+}
+.row > *.no-cell-padding {
+  --cell-padding: 0;
+}
+.row.no-row-padding {
+  --cell-padding: 0;
+}
+
+@media #{gridVars.$smallOnly} {
+  .show-for-medium {
+    display: none !important;
+  }
+  .show-for-large {
+    display: none !important;
+  }
+  .hide-for-small {
+    display: none !important;
+  }
+}
+
+@media #{gridVars.$mediumOnly} {
+  .show-for-small {
+    display: none !important;
+  }
+  .show-for-large {
+    display: none !important;
+  }
+  .hide-for-medium {
+    display: none !important;
+  }
+}
+
+@media #{gridVars.$largeOnly} {
+  .show-for-small {
+    display: none !important;
+  }
+  .show-for-medium {
+    display: none !important;
+  }
+  .hide-for-large {
+    display: none !important;
+  }
+}
+
+.row {
+  --gutter: #{map.get(gridVars.$gutters, default)};
+  gap: var(--gutter);
+  box-sizing: border-box;
+
+  & > hr {
+    flex: 0 0 100%;
+    margin-top: -0.5px;
+    margin-bottom: -0.5px;
+  }
+}
+
+@each $gName, $gValue in gridVars.$gutters {
+  .row.gutter-#{$gName} {
+    --gutter: #{$gValue};
+  }
+}
+
+.row {
+  @for $i from 12 through 1 {
+    --width-#{$i}: calc(#{round-it(calc(($i / 12) * 100)) + "%"} - var(--gutter) * #{round-it(calc((12 - $i) / 12))});
+  }
+  @for $i from 12 through 1 {
+    --offset-#{$i}: calc(#{round-it(calc(($i / 12) * 100)) + "%"} + var(--gutter) * #{round-it(calc($i / 12))});
+  }
+}
+
+@each $sName, $sValue in gridVars.$breakPoints {
+  @media (min-width:  #{$sValue}) {
+    .row {
+      @each $gName, $gValue in gridVars.$gutters {
+        &.gutter-#{$sName}-#{$gName} {
+          --gutter: #{$gValue};
+        }
+      }
+
+      @for $i from 12 through 1 {
+        & > .#{$sName}-#{$i} {
+          max-width: var(--width-#{$i});
+          flex: 0 0 var(--width-#{$i});
+        }
+      }
+
+      @for $i from 11 through 0 {
+        & > .offset-#{$sName}-#{$i} {
+          margin-left: var(--offset-#{$i});
+        }
+      }
+    }
+    @for $i from 12 through 1 {
+      .order-#{$sName}-#{$i} {
+        order: #{$i};
+      }
+    }
+  }
+}
